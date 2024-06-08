@@ -63,19 +63,15 @@
 </head>
     
 <script>
-    (function(a, b, c, d) {
-        let h = b.getElementsByTagName('head')[0];
-        let s = b.createElement('script');
-        s.type = 'text/javascript';
-        s.src = c + "/static/js/kefu-front.js";
-        s.onload = s.onreadystatechange = function () {
+     (function(a, b, c, d) {
+        let h = b.getElementsByTagName('head')[0];let s = b.createElement('script');
+        s.type = 'text/javascript';s.src = c+"/static/js/kefu-front.js";s.onload = s.onreadystatechange = function () {
             if (!this.readyState || this.readyState === "loaded" || this.readyState === "complete") d(c);
-        };
-        h.appendChild(s);
-    })(window, document, "http://127.0.0.1:8081", function(u){
+        };h.appendChild(s);
+    })(window, document,"http://127.0.0.1:8081",function(u){
         KEFU.init({
-            KEFU_URL: "http://127.0.0.1:8081" + u, 
-            KEFU_KEFU_ID: "kefu2", // 这里替换为你的客服ID
+            KEFU_URL:u,
+            KEFU_KEFU_ID: "kefu2",
         })
     });
 </script>
