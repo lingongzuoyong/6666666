@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 
-<head>
+<>
     <!-- 基础信息 -->
     <meta charset="utf-8">
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
@@ -61,7 +61,27 @@
     <!-- 51.LA 统计 -->
     <script src="./js/51LA.js"></script>
 </head>
-
+    
+<script>
+(function(a, b, c, d) {
+    let h = b.getElementsByTagName('head')[0];
+    let s = b.createElement('script');
+    s.type = 'text/javascript';
+    s.src = c + "/static/js/kefu-front.js";
+    s.onload = s.onreadystatechange = function () {
+        if (!this.readyState || this.readyState === "loaded" || this.readyState === "complete") {
+            d(c);
+        }
+    };
+    h.appendChild(s);
+})(window, document, "http://127.0.0.1:8081", function(u) {
+    KEFU.init({
+        KEFU_URL: u,
+        KEFU_KEFU_ID: "kefu2",
+    });
+});
+</script>
+    
 <body>
 <!--加载动画-->
 <div id="loading-box">
@@ -427,7 +447,7 @@
                             </div>
                             <!--更新日志-->
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
+                                <h2 class="accordion-er" id="ingTwo">
                                     <button class="accordion-button collapsed" type="button"
                                             data-bs-toggle="collapse" data-bs-target="#collapseTwo"
                                             aria-expanded="false" aria-controls="collapseTwo">
@@ -435,7 +455,7 @@
                                     </button>
                                 </h2>
                                 <div id="collapseTwo" class="accordion-collapse collapse"
-                                     aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                                     aria-labelledby="ingTwo" data-bs-parent="#accordion">
                                     <div class="accordion-body">
                                         <div class="upnote">
                                                 <span class="uptext">
