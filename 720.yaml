@@ -1,32 +1,17 @@
-port: 7890
-socks-port: 7891
-allow-lan: true
-mode: Rule
-log-level: info
+[General]
+bypass-system = true
+skip-proxy = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
+tun-excluded-routes = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
 
-proxies:
-  - name: "HTTP Proxy"
-    type: http
-    server: 139.171.67.168
-    port: 50100
-    username: handawei
-    password: QURJIEe2Z5
-  - name: "SOCKS5 Proxy"
-    type: socks5
-    server: 139.171.67.168
-    port: 50101
-    username: handawei
-    password: QURJIEe2Z5
+[Proxy]
+HTTP Proxy = http, 161.77.71.13, 50100, username=handawei, password=QURJIEe2Z5
+SOCKS5 Proxy = socks5, 161.77.71.13, 50101, username=handawei, password=QURJIEe2Z5
 
-proxy-groups:
-  - name: "Proxy"
-    type: select
-    proxies:
-      - "HTTP Proxy"
-      - "SOCKS5 Proxy"
+[Proxy Group]
+Proxy = select, HTTP Proxy, SOCKS5 Proxy
 
-rules:
-  - DOMAIN-SUFFIX,google.com,Proxy
-  - DOMAIN-SUFFIX,youtube.com,Proxy
-  - GEOIP,CN,DIRECT
-  - MATCH,DIRECT
+[Rule]
+DOMAIN-SUFFIX,google.com,Proxy
+DOMAIN-SUFFIX,youtube.com,Proxy
+GEOIP,CN,DIRECT
+FINAL,DIRECT
