@@ -4,11 +4,10 @@ skip-proxy = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
 tun-excluded-routes = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
 
 [Proxy]
-HTTP Proxy = http, 161.77.71.13, 50100, username=handawei, password=QURJIEe2Z5
-SOCKS5 Proxy = socks5, 161.77.71.13, 50101, username=handawei, password=QURJIEe2Z5
+Custom Proxy = http, ar.proxylink.net, 1111, username=plu19592-zone-custom-region-us, password=4t2q83
 
 [Proxy Group]
-Proxy = select, HTTP Proxy, SOCKS5 Proxy
+Proxy = select, Custom Proxy
 
 [Rule]
 DOMAIN-SUFFIX,google.com,Proxy
